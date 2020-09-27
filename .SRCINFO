@@ -1,0 +1,21 @@
+pkgbase = LEd
+	pkgdesc = 2D level editor
+	pkgver = v0.2.1_beta
+	pkgrel = 1
+	url = https://deepnight.net/tools/led-2d-level-editor/
+	arch = any
+	license = MIT
+	makedepends = npm
+	makedepends = haxe
+	depends = electron
+	source = LEd::git+https://github.com/deepnight/led.git#tag=v0.2.1-beta
+	source = samples-dir.patch
+	source = led
+	source = LEd.desktop
+	sha256sums = SKIP
+	sha256sums = 9dea55edbc4d5ba1a74a91030ccafc4e417fe97f7ca1cc60b2f0300f51176fdc
+	sha256sums = 8e482648c7f0cafee60c98c0d77d19be1369a273b69b146dc15f91cd989c8716
+	sha256sums = 3eb810890d28424daf2d032646506f4f8c735b2fc034e18ecd7df3a5daaebcbf
+
+pkgname = LEd
+
