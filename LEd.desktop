@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Type=Application
+Version=1.0
+Name=LEd
+Comment="2D level editor"
+Exec=led
+#Icon=
+Terminal=false
+Categories=Development
