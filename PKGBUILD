@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LEd
-pkgver="v0.2.1_beta"
+pkgver="v0.3.2_beta"
 pkgrel=1
 pkgdesc="2D level editor"
 arch=('any')
