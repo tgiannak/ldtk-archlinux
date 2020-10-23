@@ -1,6 +1,6 @@
 pkgbase = LEd
 	pkgdesc = 2D level editor
-	pkgver = v0.3.2_beta
+	pkgver = v0.4.0_beta
 	pkgrel = 1
 	url = https://deepnight.net/tools/led-2d-level-editor/
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = LEd
 	makedepends = npm
 	makedepends = haxe
 	depends = electron
-	source = LEd::git+https://github.com/deepnight/led.git#tag=v0.3.2-beta
+	source = LEd::git+https://github.com/deepnight/led.git#tag=v0.4.0-beta
 	source = samples-dir.patch
 	source = led
 	source = LEd.desktop

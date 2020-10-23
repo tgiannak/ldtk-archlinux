@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LEd
-pkgver="v0.3.2_beta"
+pkgver="v0.4.0_beta"
 pkgrel=1
 pkgdesc="2D level editor"
 arch=('any')
@@ -30,8 +30,8 @@ build() {
   haxelib --always git hxnodejs https://github.com/HaxeFoundation/hxnodejs.git
   haxelib --always git electron https://github.com/tong/hxelectron.git
   haxelib --always git deepnightLibs https://github.com/deepnight/deepnightLibs.git
-  haxelib --always git deepnightLibs https://github.com/deepnight/deepnightLibs.git
-  haxelib --always install castle
+  haxelib --always git castle https://github.com/ncannasse/castle.git
+  haxelib --always install led-haxe-api
 
   (
     cd app
