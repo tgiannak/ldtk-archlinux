@@ -1,5 +1,5 @@
-# led-archlinux
+# ldtk-archlinux
 
-Arch Linux packaging for [LEd](https://deepnight.net/docs/led/)
-([source](https://github.com/deepnight/led)), a 2D level editor.
+Arch Linux packaging for [LDtk](https://deepnight.net/docs/ldtk/)
+([source](https://github.com/deepnight/ldtk)), a 2D level editor.
 

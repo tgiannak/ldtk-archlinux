@@ -1,13 +1,13 @@
 diff --git a/src.renderer/page/Home.hx b/src.renderer/page/Home.hx
-index 85a4bbc..7d80c89 100644
+index 05b16803..c7dca36a 100644
 --- a/src.renderer/page/Home.hx
 +++ b/src.renderer/page/Home.hx
-@@ -124,7 +124,7 @@ class Home extends Page {
+@@ -222,7 +222,7 @@ class Home extends Page {
  	}
  
  	public function onLoadSamples() {
 -		var path = JsTools.getExeDir()+"/samples";
-+		var path = "/usr/share/LEd/samples";
- 		dn.electron.Dialogs.open([".json"], path, function(filePath) {
++		var path = "/usr/share/LDtk/samples";
+ 		dn.electron.Dialogs.open(["."+Const.FILE_EXTENSION], path, function(filePath) {
  			loadProject(filePath);
  		});

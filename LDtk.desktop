@@ -2,9 +2,9 @@
 
 Type=Application
 Version=1.0
-Name=LEd
+Name=LDtk
 Comment="2D level editor"
-Exec=led
+Exec=ldtk
 #Icon=
 Terminal=false
 Categories=Development

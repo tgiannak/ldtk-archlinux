@@ -1,22 +1,23 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
-pkgname=LEd
-pkgver="v0.4.1_beta_fix"
-pkgrel=2
-pkgdesc="2D level editor"
+pkgname=LDtk
+pkgver="v0.5.0_beta"
+pkgrel=1
+pkgdesc="Level Designer Toolkit: a 2D level editor"
 arch=('any')
-url="https://deepnight.net/tools/led-2d-level-editor/"
+url="https://deepnight.net/tools/ldtk-2d-level-editor/"
 license=('MIT')
 depends=('electron')
 makedepends=('npm' 'haxe')
-source=("$pkgname::git+https://github.com/deepnight/led.git#tag=${pkgver//_/-}"
+replaces=('LEd')
+source=("$pkgname::git+https://github.com/deepnight/ldtk.git#tag=${pkgver//_/-}"
         "samples-dir.patch"
-        "led"
-        "LEd.desktop")
+        "ldtk"
+        "LDtk.desktop")
 sha256sums=('SKIP'
-            '9dea55edbc4d5ba1a74a91030ccafc4e417fe97f7ca1cc60b2f0300f51176fdc'
-            '8e482648c7f0cafee60c98c0d77d19be1369a273b69b146dc15f91cd989c8716'
-            '3eb810890d28424daf2d032646506f4f8c735b2fc034e18ecd7df3a5daaebcbf')
+            '0c4ff249d3ca26738ece8b9417ecffbfe318e7a5111078669d797e846e86a10c'
+            'da01d21b815c928cf0451cc9e7dce5af6fae2f6b9d4be0975d44229b9d4fc29b'
+            'a846ddb7ee95f65c4c51ba5206753baeac535961949253f9343ca188595eaf9f')
 
 prepare() {
   git -C "$srcdir/$pkgname" apply "$srcdir/samples-dir.patch"
@@ -30,8 +31,8 @@ build() {
   haxelib --always git hxnodejs https://github.com/HaxeFoundation/hxnodejs.git
   haxelib --always git electron https://github.com/tong/hxelectron.git
   haxelib --always git deepnightLibs https://github.com/deepnight/deepnightLibs.git
+  haxelib --always git ldtk-haxe-api https://github.com/deepnight/ldtk-haxe-api.git
   haxelib --always git castle https://github.com/ncannasse/castle.git
-  haxelib --always install led-haxe-api
 
   (
     cd app
@@ -53,19 +54,30 @@ build() {
 }
 
 package() {
-  install -Dm644 -t "${pkgdir}/usr/share/applications/" "LEd.desktop"
-  install -Dm755 -t "${pkgdir}/usr/bin/" "led"
+  install -Dm644 -t "${pkgdir}/usr/share/applications/" "LDtk.desktop"
+  install -Dm755 -t "${pkgdir}/usr/bin/" "ldtk"
 
   install -Dm644 \
-          -t "${pkgdir}/usr/share/LEd" \
+          -t "${pkgdir}/usr/share/ldtk/" \
           "${pkgname}/app/redist/linux-unpacked/resources/app.asar"
+
+  install -Dm644 \
+          -t "${pkgdir}/usr/share/licenses/ldtk/" \
+          "${pkgname}/LICENSE"
+  # The READMEs include required attributions for included components.
+  install -Dm644 \
+          -t "${pkgdir}/usr/share/licenses/ldtk/" \
+          "${pkgname}/README.md"
+  install -Dm644 \
+          -t "${pkgdir}/usr/share/licenses/ldtk/samples/" \
+          "${pkgname}/app/samples/README.md"
 
   (
     cd "${pkgname}/app/redist/linux-unpacked/samples"
     for file in $(find . -type f); do
       install -Dm644 \
               "${file}" \
-              "${pkgdir}/usr/share/LEd/samples/${file}"
+              "${pkgdir}/usr/share/LDtk/samples/${file}"
     done
   )
 }
