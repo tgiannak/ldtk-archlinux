@@ -1,16 +1,15 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LEd
-pkgver="v0.4.1_beta"
-pkgrel=1
+pkgver="v0.4.1_beta_fix"
+pkgrel=2
 pkgdesc="2D level editor"
 arch=('any')
 url="https://deepnight.net/tools/led-2d-level-editor/"
 license=('MIT')
 depends=('electron')
 makedepends=('npm' 'haxe')
-source=("$pkgname::git+https://github.com/deepnight/led.git#tag=0.4.1-beta-fix"
-        # "$pkgname::git+https://github.com/deepnight/led.git#tag=${pkgver//_/-}"
+source=("$pkgname::git+https://github.com/deepnight/led.git#tag=${pkgver//_/-}"
         "samples-dir.patch"
         "led"
         "LEd.desktop")
