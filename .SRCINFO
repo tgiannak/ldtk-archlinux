@@ -1,22 +1,23 @@
 pkgbase = LDtk
 	pkgdesc = Level Designer Toolkit: a 2D level editor
-	pkgver = v0.5.0_beta
+	pkgver = v0.5.2_beta
 	pkgrel = 1
 	url = https://deepnight.net/tools/ldtk-2d-level-editor/
 	arch = any
 	license = MIT
 	makedepends = npm
 	makedepends = haxe
+	makedepends = icoutils
 	depends = electron
 	replaces = LEd
-	source = LDtk::git+https://github.com/deepnight/led.git#tag=v0.5.0-beta
+	source = LDtk::git+https://github.com/deepnight/ldtk.git#tag=v0.5.2-beta
 	source = samples-dir.patch
 	source = ldtk
 	source = LDtk.desktop
 	sha256sums = SKIP
-	sha256sums = 0c4ff249d3ca26738ece8b9417ecffbfe318e7a5111078669d797e846e86a10c
-	sha256sums = 8e482648c7f0cafee60c98c0d77d19be1369a273b69b146dc15f91cd989c8716
-	sha256sums = a846ddb7ee95f65c4c51ba5206753baeac535961949253f9343ca188595eaf9f
+	sha256sums = 65ed7fc633226511197ff4efa181c6a2e00d484ee66d2e8dd1f0785e1917a305
+	sha256sums = da01d21b815c928cf0451cc9e7dce5af6fae2f6b9d4be0975d44229b9d4fc29b
+	sha256sums = 38de6761f94e57561eac96311c8b3d19b89568e28fb3fb9bf1e4679c109ca5ce
 
 pkgname = LDtk
 

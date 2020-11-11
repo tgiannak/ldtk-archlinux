@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LDtk
-pkgver="v0.5.1_beta"
+pkgver="v0.5.2_beta"
 pkgrel=1
 pkgdesc="Level Designer Toolkit: a 2D level editor"
 arch=('any')
