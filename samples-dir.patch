@@ -1,13 +1,27 @@
-diff --git a/src.renderer/page/Home.hx b/src.renderer/page/Home.hx
-index b2ef8288..2c93b468 100644
---- a/src.renderer/page/Home.hx
-+++ b/src.renderer/page/Home.hx
-@@ -218,7 +218,7 @@ class Home extends Page {
+diff --git a/src.renderer/App.hx b/src.renderer/App.hx
+index e1775448..d1299ee4 100644
+--- a/src.renderer/App.hx
++++ b/src.renderer/App.hx
+@@ -22,7 +22,8 @@ class App extends dn.Process {
+ 		super();
+ 
+ 		// Init logging
+-		LOG.logFilePath = JsTools.getExeDir()+"/LDtk.log";
++		var logPath = Sys.environment().get("XDG_CACHE_HOME");
++		LOG.logFilePath = if (logPath == null) { Sys.environment().get("HOME")+"/.cache/ldtk.log"; } else { logPath+"/ldtk.log"; }
+ 		LOG.trimFileLines();
+ 		LOG.emptyEntry();
+ 		LOG.tagColors.set("tidy", "#8ed1ac");
+diff --git a/src.renderer/misc/JsTools.hx b/src.renderer/misc/JsTools.hx
+index 3d8c97fb..2dc5cf9f 100644
+--- a/src.renderer/misc/JsTools.hx
++++ b/src.renderer/misc/JsTools.hx
+@@ -551,7 +551,7 @@ class JsTools {
  	}
  
- 	public function onLoadSamples() {
--		var path = JsTools.getExeDir()+"/samples";
-+		var path = "/usr/share/ldtk/samples";
- 		dn.electron.Dialogs.open(["."+Const.FILE_EXTENSION], path, function(filePath) {
- 			App.ME.loadProject(filePath);
- 		});
+ 	public static function getSamplesDir() {
+-		return dn.FilePath.fromDir( getExeDir()+"/samples" ).directory;
++		return dn.FilePath.fromDir( "/usr/share/ldtk/samples" ).directory;
+ 	}
+ 
+ 	public static function getAppResourceDir() {

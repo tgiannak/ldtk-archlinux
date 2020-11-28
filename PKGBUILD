@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LDtk
-pkgver="v0.5.2_beta"
+pkgver="v0.6.0"
 pkgrel=1
 pkgdesc="Level Designer Toolkit: a 2D level editor"
 arch=('any')
@@ -15,7 +15,7 @@ source=("$pkgname::git+https://github.com/deepnight/ldtk.git#tag=${pkgver//_/-}"
         "ldtk"
         "LDtk.desktop")
 sha256sums=('SKIP'
-            '65ed7fc633226511197ff4efa181c6a2e00d484ee66d2e8dd1f0785e1917a305'
+            '808de437f2f780cf7f899a31f9bd7f43b1869dcf3c40b22a66d66251ef52c085'
             'da01d21b815c928cf0451cc9e7dce5af6fae2f6b9d4be0975d44229b9d4fc29b'
             '38de6761f94e57561eac96311c8b3d19b89568e28fb3fb9bf1e4679c109ca5ce')
 
@@ -80,10 +80,9 @@ package() {
 
   (
     cd "${pkgname}/app/redist/linux-unpacked/samples"
-    for file in $(find . -type f); do
-      install -Dm644 \
-              "${file}" \
-              "${pkgdir}/usr/share/ldtk/samples/${file}"
-    done
+    find . -type f -exec \
+         install -Dm644 \
+         {} \
+         "${pkgdir}/usr/share/ldtk/samples/{}" \;
   )
 }
