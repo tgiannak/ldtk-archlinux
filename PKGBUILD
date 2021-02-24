@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LDtk
-pkgver="v0.6.0"
+pkgver="v0.7.2"
 pkgrel=1
 pkgdesc="Level Designer Toolkit: a 2D level editor"
 arch=('any')
@@ -10,17 +10,17 @@ license=('MIT')
 depends=('electron')
 makedepends=('npm' 'haxe' 'icoutils')
 replaces=('LEd')
-source=("$pkgname::git+https://github.com/deepnight/ldtk.git#tag=${pkgver//_/-}"
-        "samples-dir.patch"
+source=("$pkgname::git+https://github.com/deepnight/ldtk.git#tag=${pkgver}"
+        "paths-fix.patch"
         "ldtk"
         "LDtk.desktop")
 sha256sums=('SKIP'
-            '808de437f2f780cf7f899a31f9bd7f43b1869dcf3c40b22a66d66251ef52c085'
+            '9858ea55a9a2b9dd1c489caffa6b0cf77ed916782b808b34971edc5a1b67cd18'
             'da01d21b815c928cf0451cc9e7dce5af6fae2f6b9d4be0975d44229b9d4fc29b'
             '38de6761f94e57561eac96311c8b3d19b89568e28fb3fb9bf1e4679c109ca5ce')
 
 prepare() {
-  git -C "$srcdir/$pkgname" apply "$srcdir/samples-dir.patch"
+  git -C "$srcdir/$pkgname" apply "$srcdir/paths-fix.patch"
 }
 
 build() {
