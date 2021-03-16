@@ -1,7 +1,7 @@
 # Maintainer: Theophilos Giannakopoulos <theo@abstractnonsense.org>
 
 pkgname=LDtk
-pkgver="v0.8.0"
+pkgver="v0.8.1"
 pkgrel=1
 pkgdesc="Level Designer Toolkit: a 2D level editor"
 arch=('any')
@@ -30,7 +30,7 @@ build() {
   haxelib --never git heaps https://github.com/HeapsIO/heaps.git
   haxelib --never git hxnodejs https://github.com/HaxeFoundation/hxnodejs.git
   haxelib --never git electron https://github.com/tong/hxelectron.git
-  haxelib --never git deepnightLibs https://github.com/deepnight/deepnightLibs.git
+  haxelib --never git deepnightLibs https://github.com/deepnight/deepnightLibs.git 33e0d69a5f
   haxelib --never git ldtk-haxe-api https://github.com/deepnight/ldtk-haxe-api.git
   haxelib --never git castle https://github.com/ncannasse/castle.git
 
